@@ -1,0 +1,27 @@
+{
+  "name": "thelivingexperiment",
+  "version": "1.0.0",
+  "description": "A project for The Living Experiment",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/killinski/thelivingexperiment.git"
+  },
+  "keywords": [
+    "Wordpress",
+    "Themes",
+    "Podcasts"
+  ],
+  "author": "Glasgow Shipyard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/killinski/thelivingexperiment/issues"
+  },
+  "homepage": "https://github.com/killinski/thelivingexperiment#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

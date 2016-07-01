@@ -1,0 +1,74 @@
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	color: $color__tle-blue;
+	font-family: 'Pathway Gothic One', sans-serif;
+}
+
+h1 {
+	//color: $color__tle-blue;
+	//font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 2.5em;
+	font-weight: normal;
+}
+
+.header-image {
+	width: 90%;
+	margin: auto;
+}
+
+.site-title {
+	font-size: $tle_title_size;
+	line-height: 1;
+}
+
+.site-title,
+.site-wordmark {
+	text-transform: uppercase;
+	margin: auto;
+}
+
+.site-wordmark {
+	position: relative;
+	float: left;
+}
+	
+.site-title a,
+.site-wordmark a {
+	
+	&:visited,
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__tle-blue;
+		outline: 0;
+		
+	}
+}
+
+.site-description {
+	line-height: 0;
+	text-transform: uppercase;
+}
+
+.praedyth {
+	background: $color__tle-menu;
+}
+
+div.the {
+	border-radius: 50%;
+	border: 2px solid;
+	margin: auto;
+	width: 4rem;
+	height: 4rem;
+	padding-top: .9rem;
+	font-size: 2rem;
+}
+
+span.the {
+	vertical-align: text-top;
+	font-size: .6em;
+}
+
+//font-family: 'Rokkitt', serif;
+//font-family: 'Pathway Gothic One', sans-serif;
+//font-family: 'PT Sans Narrow', sans-serif;
