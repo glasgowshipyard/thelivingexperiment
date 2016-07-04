@@ -12,7 +12,7 @@
 ?>
 
 	</div><!-- #content -->
-</div><!-- #behold? -->
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'thelivingexperiment' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'thelivingexperiment' ), 'WordPress' ); ?></a>
@@ -21,7 +21,7 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-</div><!-- BEHOLD -->
+
 <?php wp_footer(); ?>
 
 </body>

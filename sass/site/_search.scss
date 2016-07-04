@@ -2,10 +2,7 @@
 
 .search-toggle {
     float: right;
-    width: 54px;
-    height: 54px;
-    padding: 12px;
-    margin-right: 20px;
+    margin-right: -1em;
     text-align: center;
     cursor: pointer;
 }
@@ -22,6 +19,7 @@
 .search-box-wrapper {
     z-index: 2;
     width: 100%;
+    transition: all 500ms ease-in-out;
 }
 .search-box {
 	margin-top: $tle_menu_height;

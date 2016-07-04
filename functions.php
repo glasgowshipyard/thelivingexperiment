@@ -45,8 +45,7 @@ function thelivingexperiment_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' 	=> esc_html__( 'Primary', 'thelivingexperiment' ),
-		'social' 	=> esc_html__( 'Social Menu', 'thelivingexperiment'),
-
+		'social' 	=> esc_html__( 'Social Menu', 'thelivingexperiment')
 	) );
 
 	/*
@@ -139,6 +138,8 @@ function thelivingexperiment_scripts() {
 	wp_enqueue_script( 'thelivingexperiment-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
 	wp_enqueue_style( 'thelivingexperiment-google-fonts', 'https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|Pathway+Gothic+One|Rokkitt');
+	
+	wp_enqueue_style('thelivingexperiment-fontawesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', true );
 
 	wp_enqueue_script( 'thelivingexperiment-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
@@ -183,7 +184,7 @@ function Get_Post_Number($postID){
 function episodeNo() {
 			$epID = get_the_ID();
 		$epNumber = Get_Post_Number($epID);
-		echo 'Episode ' . $epNumber;
+		echo 'EPISODE ' . $epNumber;
 		}
 add_shortcode('episode','episodeNo');
 

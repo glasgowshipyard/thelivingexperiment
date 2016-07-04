@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Popup Page
+ * Template Name: Popup Page HELP
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *

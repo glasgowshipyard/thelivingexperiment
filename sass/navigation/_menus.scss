@@ -12,9 +12,7 @@
 .main-navigation {
 	display: block;
 	float: right;
-	//height: 70px;
-//	z-index: 199;
-	padding: .5em;
+	padding: 1.5em;
 	ul {
 		display: none;
 		list-style: none;
@@ -63,6 +61,7 @@
 	li {
 		float: left;
 		position: relative;
+		padding: 0 1em;
 
 		&:hover > a,
 		&.focus > a {
@@ -167,12 +166,11 @@
 
 .menu-social ul {
     position: absolute;
-        top: 1.2em;
-		right: 1em;
-        display: block;
-		//float: right;
-    list-style: none;    
-    //z-index: 3;
+    top: $tle_menu_height;
+	right: 1em;
+    display: block;
+	list-style: none;    
+    z-index: 3;
 }
 
 .menu-social ul li {
@@ -185,7 +183,7 @@
     padding: 0 5px;
     vertical-align: top;
     font-family: 'Fontawesome';
-    font-size: 32px;
+    //font-size: 32px;
 	//color: $dallas__grey;
     -webkit-font-smoothing: antialiased;
     content: '\f0c0';

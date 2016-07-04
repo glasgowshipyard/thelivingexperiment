@@ -591,7 +591,7 @@ a:hover, a:focus, a:active {
 .main-navigation {
   display: block;
   float: right;
-  padding: .5em;
+  padding: 1.5em;
 }
 .main-navigation ul {
   display: none;
@@ -624,6 +624,7 @@ a:hover, a:focus, a:active {
 .main-navigation li {
   float: left;
   position: relative;
+  padding: 0 1em;
 }
 .main-navigation a {
   display: block;
@@ -710,10 +711,11 @@ a:hover, a:focus, a:active {
 /* Social Menu */
 .menu-social ul {
   position: absolute;
-  top: 1.2em;
+  top: 72px;
   right: 1em;
   display: block;
   list-style: none;
+  z-index: 3;
 }
 
 .menu-social ul li {
@@ -726,7 +728,6 @@ a:hover, a:focus, a:active {
   padding: 0 5px;
   vertical-align: top;
   font-family: 'Fontawesome';
-  font-size: 32px;
   -webkit-font-smoothing: antialiased;
   content: '\f0c0';
 }
@@ -915,63 +916,6 @@ a:hover, a:focus, a:active {
   width: 100%;
 }
 
-.episodes {
-  white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  webkit-overflow-scrolling: touch;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-x: snapInterval 0px, 200px;
-}
-
-.episode-post {
-  display: inline-block;
-  border: 2px solid;
-  -webkit-column-break-inside: avoid;
-  /* Chrome, Safari */
-  page-break-inside: avoid;
-  /* Theoretically FF 20+ */
-  break-inside: avoid-column;
-  /* IE 11 */
-  width: 200px;
-  white-space: normal;
-}
-
-.episode-number,
-.episode-title,
-.episode-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.episode-number {
-  border-top: 2px solid #939598;
-  border-bottom: 2px solid #939598;
-  font-family: 'Rokkitt', serif;
-  color: #772c41;
-  line-height: 2.5;
-}
-
-.episode-title {
-  height: 6.65em;
-  text-transform: lowercase;
-  line-height: 1;
-  margin: 0 auto;
-  padding: 1.125em;
-}
-
-.episode-excerpt {
-  height: 12.5em;
-  overflow: scroll;
-  padding: 0 2.25em;
-  font-family: 'PT Sans Narrow', sans-serif;
-}
-
-.episode-footer {
-  padding: 1.5em;
-}
-
 /*  SECTIONS  */
 .section {
   clear: both;
@@ -1115,13 +1059,96 @@ Experimental CSS popup
   background: #00d9ff;
 }
 
+.player {
+  border: 2px solid #939598;
+}
+
+.player-episode {
+  font-family: 'Rokkitt', serif;
+  color: #772c41;
+  display: inline-block;
+  /* left: 0; */
+  float: right;
+  padding: 1em;
+  border-left: 2px solid #939598;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.9;
+}
+
+.player-title {
+  text-transform: lowercase;
+  margin: 0;
+  display: inline-block;
+}
+
+.player-blurb {
+  border-top: 2px solid #939598;
+}
+
+.episodes {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  webkit-overflow-scrolling: touch;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-x: snapInterval 0px, 200px;
+}
+
+.episode-post {
+  display: inline-block;
+  border: 2px solid;
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari */
+  page-break-inside: avoid;
+  /* Theoretically FF 20+ */
+  break-inside: avoid-column;
+  /* IE 11 */
+  width: 200px;
+  white-space: normal;
+}
+
+.episode-number,
+.episode-title,
+.episode-footer,
+.player-episode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.episode-number {
+  border-top: 2px solid #939598;
+  border-bottom: 2px solid #939598;
+  font-family: 'Rokkitt', serif;
+  color: #772c41;
+  line-height: 2.5;
+}
+
+.episode-title {
+  height: 6.65em;
+  text-transform: lowercase;
+  line-height: 1;
+  margin: 0 auto;
+  padding: 1.125em;
+}
+
+.episode-excerpt {
+  height: 12.5em;
+  overflow: scroll;
+  padding: 0 2.25em;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.episode-footer {
+  padding: 1.5em;
+}
+
 /* Header search */
 .search-toggle {
   float: right;
-  width: 54px;
-  height: 54px;
-  padding: 12px;
-  margin-right: 20px;
+  margin-right: -1em;
   text-align: center;
   cursor: pointer;
 }
@@ -1139,6 +1166,7 @@ Experimental CSS popup
 .search-box-wrapper {
   z-index: 2;
   width: 100%;
+  transition: all 500ms ease-in-out;
 }
 
 .search-box {

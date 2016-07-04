@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying episodes.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -11,21 +11,13 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php if ( is_single() && in_category( 'podcast-episodes' )) {?>
 		<div class="player"><div class="player-episode"><?php do_shortcode("[episode]");?></div><?php
-				the_title( '<h1 class="player-title">', '</h1>' );?>
-		<div class="player-blurb">
-		<?php the_excerpt(); ?>
-		</div><?
-				
-			} else {
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+				the_title( '<h1 class="player-title">', '</h1>' );
 
 		if ( 'post' === get_post_type() ) : ?>
 		<?php
 		endif; ?>
-		
+		<?php the_excerpt(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

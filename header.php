@@ -22,16 +22,16 @@
 <body <?php body_class(); ?>>
 	<div class="navbar">
 	<h1 class="site-wordmark"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="the">The</span><?php bloginfo( 'name' ); ?></a></h1>
-			<nav id="site-navigation" class="main-navigation" role="navigation"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span><?php esc_html_e( 'Primary Menu', 'thelivingexperiment' ); ?></button><i class="fa fa-search" style="font-family: 'fontawesome';"></i><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<nav id="site-navigation" class="main-navigation" role="navigation"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span><?php esc_html_e( 'Primary Menu', 'thelivingexperiment' ); ?></button><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 <span  class="search-toggle"><i class="fa fa-search"></i><a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'thelivingexperiment' ); ?></a></span>
 			</nav>
+			<?php thelivingexperiment_social_menu(); ?>
 			<div id="header-search-container" class="search-box-wrapper hide">
 			<div class="search-box">
 				<?php get_search_form(); ?>
 			</div>
 			</div>
 </div>
-
 <div class="behold">
 		<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'thelivingexperiment' ); ?></a>
@@ -51,8 +51,7 @@
 		<?php endif; // End header image check. ?>
 		<?php endif; // End front page check. ?>
 			</div><!-- .site-branding -->
+	</header><!-- #masthead -->
 		<?php if ( dynamic_sidebar('subscribe') ) : else : endif; ?>
 		<?php if ( dynamic_sidebar('contact') ) : else : endif; ?>
-	</header><!-- #masthead -->
-	
 	<div id="content" class="site-content">

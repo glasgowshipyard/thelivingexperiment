@@ -30,7 +30,7 @@ get_header(); ?>
 							echo '<h1 >' . get_the_title() . '</h1>';
 							echo '</a>';
 							echo '</div>';
-							echo '<div class= "episode-number">';
+							echo '<div class="episode-number">';
 							do_shortcode('[episode]');
 							echo '</div>';
 							setup_postdata($query->post);
