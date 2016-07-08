@@ -3,6 +3,9 @@
  *
  * Learn more: http://codepen.io/nickcil/pen/sfutl/
  */
- $(document).ready(function() {
-  // put all your jQuery goodness in here.
-$('h1').css({'opacity':( 100-$(window).scrollTop() )/100});
+ 
+ jQuery(document).ready(function($){
+   $(window).scroll(function(){
+    $(".glass-promontory").css("opacity", 1 - $(window).scrollTop() / 500);
+ });
+});

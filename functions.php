@@ -144,6 +144,9 @@ function thelivingexperiment_scripts() {
 	wp_enqueue_script( 'thelivingexperiment-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
 	wp_enqueue_script( 'thelivingexperiment-search', get_template_directory_uri() . '/js/hide-search.js', array('jquery'), '20151215', true );
+	
+	wp_enqueue_script( 'thelivingexperiment-fade', get_template_directory_uri() . '/js/fade.js', array('jquery'), '20160707', true );
+
 
 	
 //	wp_enqueue_script( 'thelivingexperiment-fade-title', get_template_directory_uri() . '/js/fade.js', array(), '20160624', true );
@@ -187,6 +190,26 @@ function episodeNo() {
 		echo 'EPISODE ' . $epNumber;
 		}
 add_shortcode('episode','episodeNo');
+
+// First, make sure Jetpack doesn't concatenate all its CSS
+add_filter( 'jetpack_implode_frontend_css', '__return_false' );
+
+// Then, remove each CSS file, one at a time
+function thelivingexperiment_remove_all_jp_css() {
+	wp_deregister_style( 'sharedaddy' ); // Sharedaddy
+	wp_deregister_style( 'grunion.css' ); // Grunion contact form
+}
+add_action('wp_print_styles', 'thelivingexperiment_remove_all_jp_css' );
+
+function jptweak_remove_share() {
+    if ( is_page( 189 ) ) {
+    remove_filter( 'the_content', 'sharing_display',19 );
+    remove_filter( 'the_excerpt', 'sharing_display',19 );
+      }
+}
+ 
+add_action( 'loop_start', 'jptweak_remove_share' );
+
 
 /**
  * Implement the Custom Header feature.
