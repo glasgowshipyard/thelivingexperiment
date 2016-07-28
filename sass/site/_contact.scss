@@ -1,52 +1,100 @@
 /*
 Experimental CSS popup
 */
+
+body.modalDialog {
+	overflow: hidden;
+}
+
 .modalDialog {
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: black;
 	z-index: 99999;
 	opacity: 0;
+	visibility: hidden;
 	transition: opacity 400ms ease-in;
 	pointer-events: none;
 }
 
 .modalDialog:target {
+	@include parallax(.2);
 	opacity: 1;
+	visibility: visible;
 	pointer-events: auto;
 }
 
 .modalDialog > div {
-	width: 400px;
+	max-width: 950px;
+	//max-height: 400px;
 	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px;
-	border-radius: 10px;
-	background: #fff;
+	margin: 150px auto;
+	padding: .5em;
+	border: 2px solid $color__tle-blue;
+	display: flex;
+    justify-content: space-between;
+    background: #fff;
 }
 
 .modalDialog > .modal-title {
-	color: red;
+	display: none;
 }
 
 .close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
 	position: absolute;
-	right: -12px;
+	right: 5px;
 	text-align: center;
-	top: -10px;
-	width: 24px;
+	top: 0;
 	text-decoration: none;
-	font-weight: bold;
-	border-radius: 12px;
-	box-shadow: 1px 1px 3px #000;
+	font-size: 1.2em;
 }
 
-.close:hover {
-	background: #00d9ff;
+.podcast-cover img {
+	max-width: 250px;
+}
+.podcast-cover {
+	width: 33%;
+	margin: 2em;
+}
+
+#opencontact.blurb {
+	margin-left: 4em;
+}
+
+.modalDialog input[type="text"],
+.modalDialog input[type="email"],
+.modalDialog input[type="url"],
+.modalDialog input[type="password"],
+.modalDialog input[type="search"],
+.modalDialog input[type="number"],
+.modalDialog input[type="tel"],
+.modalDialog input[type="range"],
+.modalDialog input[type="date"],
+.modalDialog input[type="month"],
+.modalDialog input[type="week"],
+.modalDialog input[type="time"],
+.modalDialog input[type="datetime"],
+.modalDialog input[type="datetime-local"],
+.modalDialog input[type="color"],
+.modalDialog textarea {
+	margin-top: 2em;
+	margin-left: 4em;
+	min-width: 300px;
+	background-color: $color__tle-menu;
+	border: none;
+	text-transform: uppercase;
+}
+
+.modalDialog textarea {
+	width: 400px;
+	height: 200px;
+}
+
+.modalDialog button,
+.modalDialog input[type="button"],
+.modalDialog input[type="reset"],
+.modalDialog input[type="submit"] {
+	margin-left: 4em;
 }

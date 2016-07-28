@@ -1,0 +1,41 @@
+ul.subscribe {
+	text-align: center;
+	width: 33%;
+	margin: 1.5em auto;
+}
+
+ul.subscribe li {
+  list-style: none;
+  width: 180px;
+  border-radius: .5em;
+  background: grey;
+  opacity: .5;
+  text-align: center;
+  margin: .5em;
+  padding: .2em;
+}
+
+ul.subscribe li a{
+  width: 100%;
+}
+
+ul.subscribe a img{
+  max-height: 3em;
+  max-width: 180px;
+  padding: 0 .5em;
+  vertical-align: middle;
+  opacity: 1;
+  filter: grayscale(1);
+}
+
+ul.subscribe a img:hover {
+  opacity: .5;
+  transition: 0.1s;
+}
+
+.blurb {
+	width: 33%;
+	padding: 0 2em;
+	text-align: center
+}
+

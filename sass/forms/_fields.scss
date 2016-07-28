@@ -17,6 +17,7 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: 3px;
+	font-family: 'Rokkitt', serif;
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -48,4 +49,28 @@ input[type="color"] {
 textarea {
 	padding-left: 3px;
 	width: 100%;
+}
+
+.contact-form .grunion-field-label {
+	display: none;
+}
+
+::-webkit-input-placeholder {
+   color: $color__tle-red;
+   text-transform: uppercase;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $color__tle-red;
+   text-transform: uppercase;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: $color__tle-red;
+   text-transform: uppercase;
+}
+
+:-ms-input-placeholder {  
+    color: $color__tle-red;
+   text-transform: uppercase;
 }

@@ -7,19 +7,12 @@
 	bottom: 0;
   }
   
-.vexed-af {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
 .glass-promontory {
 	@include parallax(.2);
 	position: absolute;
 	text-align: center;
 	width: 100%;
-	top: 3em;
+	top: 4em;
 	opacity: 1;
 }
 
@@ -58,6 +51,26 @@
 	.span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
 }
 
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.6%;
+}
+.span_2_of_4 {
+	width: 49.2%;
+}
+.span_1_of_4 {
+	width: 23.8%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; }
+}
+
 .top {
   margin: 0;
   position: relative;
@@ -76,4 +89,73 @@
   position: absolute;
   top: 60%;
   left: 100px;
+}
+
+.opt-in {
+	text-align: center;
+	width: 90%;
+	margin: auto;
+	font-size: 1.125em;
+}
+
+div.unhealthy-world-pdf {
+	max-width: 40%;
+	padding: 1em;
+}
+
+div.indicates-required {
+	display: none;
+}
+
+
+div.more-from {
+  font-size: 0;
+}
+
+div#mc_embed_signup{
+	padding: 0 1em;
+}
+
+.more-from a {
+  font-size: 16px;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+}
+
+.more-from a:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 50em) {
+.more-from a {
+    width: calc(25% - 6px);
+  }
+  
+.more-from a:nth-of-type(2n) {
+    margin-right: 8px;
+  }
+  
+.more-from a:nth-of-type(4n) {
+    margin-right: 0;
+  }
+}
+
+.more-from figure {
+  margin: 0;
+}
+
+.more-from img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #ccc;
+  transition: transform .2s ease-in-out;
+}
+
+div.alm-btn-wrap {
+	text-align: center;
 }

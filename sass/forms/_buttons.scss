@@ -2,29 +2,47 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	min-width: 6.6875em;
+	min-width: 180px;
 	border: none;
 	//border-color: $color__border-button;
-	border-radius: 1em;
+	border-radius: 2em;
 	background: $color__tle-dark-grey;
 	//box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: #ffffff;
 	//@include font-size(0.75);
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .6em 1em;
 	//text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: .2em;
 
 	&:hover,
 	&:active,
 	&:focus {
 		background: $color__tle-light-grey;	
+		color: #ffffff;
+		}
+}
+
+button.subscribe a{
+	color: #fff;
+	&:hover,
+	&:active,
+	&:focus {
+		background: $color__tle-light-grey;	
+		color: #ffffff;
 		}
 }
 
 .listen {
+	padding: .6em 1em .5em;
+}
+.listen {
 	background: $color__tle-light-grey;
-	//@include font-size(0.75);
-	line-height: 1;
+	font-family: 'Rokkitt', serif;
+	font-weight: normal;
 	
 	//text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 

@@ -29,13 +29,28 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<div class="pointless">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'thelivingexperiment' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
-
+			?></div><?php
+			if ( function_exists( 'sharing_display' )) {
+			echo '<div class="share-episode">';
+		    sharing_display( '', true );
+		    if ( has_post_thumbnail() ) {
+				the_post_thumbnail();
+				} else { ?>
+				<img src="<?php bloginfo('template_directory'); ?>/images/default-image.jpg" alt="<?php the_title(); ?>" />
+				<?php
+		    echo '</div>';
+}}
+if ( class_exists( 'Jetpack_Likes' ) ) {
+    $custom_likes = new Jetpack_Likes;
+    echo $custom_likes->post_likes( '' );
+}
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'thelivingexperiment' ),
 				'after'  => '</div>',

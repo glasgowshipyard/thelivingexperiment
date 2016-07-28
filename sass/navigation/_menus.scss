@@ -81,7 +81,6 @@
 }
 
 /* Small menu. */
-/* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -103,16 +102,16 @@
   border-radius: 1px;
   height: 5px;
   width: 32px;
-  //background: $dallas__grey;
+  background: $color__tle-light-grey;
   position: absolute;
   display: block;
   content: '';
 }
 .menu-toggle span:before {
-  //top: -10px;
+  top: -10px;
 }
 .menu-toggle span:after {
-  //bottom: -10px; 
+  bottom: -10px; 
 }
 
 .menu-toggle span, .menu-toggle span:before, .menu-toggle span:after {
@@ -130,6 +129,22 @@
 .menu-toggle.active span:after {
   transform: rotate(-45deg);
 }
+
+.menu-toggle {
+            display: block;
+            font-weight: normal;
+            text-decoration: none;
+            line-height: 2.75em;
+        }
+button.menu-toggle {
+	background: transparent;
+}
+    
+    button.menu-toggle a {
+	    border: none;
+	    outline: none;
+    }
+
 
 
 @media screen and (min-width: 37.5em) {
@@ -165,12 +180,17 @@
 /* Social Menu */
 
 .menu-social ul {
-    position: absolute;
-    top: $tle_menu_height;
-	right: 1em;
+  //  position: absolute;
+    //top: $tle_menu_height;
+	//right: 1em;
     display: block;
 	list-style: none;    
     z-index: 3;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    background: $color__tle-menu;
+    width: 8em;
 }
 
 .menu-social ul li {
@@ -182,9 +202,7 @@
     display: inline-block;
     padding: 0 5px;
     vertical-align: top;
-    font-family: 'Fontawesome';
-    //font-size: 32px;
-	//color: $dallas__grey;
+    font-family: 'fontawesome';
     -webkit-font-smoothing: antialiased;
     content: '\f0c0';
 }
@@ -212,3 +230,52 @@
 .menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
 
 .menu-social li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+
+/* Author Menu */
+
+.author-social ul {
+    display: block;
+	list-style: none;
+	border-top: 2px solid $color__tle-border;
+	border-bottom: 2px solid $color__tle-border;
+	width: 90%;
+	margin: auto;
+	padding: 1em;
+    
+}
+
+.author-social ul li {
+    position: relative;
+    display:  inline-block;
+    padding: 0 .5em;    
+}
+
+.author-social li a:before {
+   display: inline-block;
+	/* padding: 1px; */
+	/* vertical-align: top; */
+	font-family: 'fontawesome';
+	-webkit-font-smoothing: antialiased;
+	content: '\f0c0';
+	color: #fff;
+	border-radius: 50%;
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	background-color: #77797b
+}
+
+.author-social li a[href*="facebook.com"]::before { content: '\f09a'; }
+
+.author-social li a[href*="twitter.com"]::before { content: '\f099'; }
+
+.author-social li a[href*="youtube.com"]::before { content: '\f167'; }
+
+.author-social li a[href*="flickr.com"]::before { content: '\f16e'; }
+
+.author-social li a[href*="instagram.com"]::before { content: '\f16d'; }
+
+.author-social li a[href*="mailto:"]::before { content: '\f003'; }
+
+
+

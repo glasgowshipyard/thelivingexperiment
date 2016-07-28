@@ -111,10 +111,37 @@ function thelivingexperiment_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Contact Widget', 'thelivingexperiment' ),
 		'id'            => 'contact',
-		'description'   => esc_html__( 'Add or edit contact  form copy here.', 'thelivingexperiment' ),
+		'description'   => esc_html__( 'Add or edit contact form copy here.', 'thelivingexperiment' ),
 		'before_widget' => '<div id="openContact" class="modalDialog">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="modal-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Newsletter Popup', 'thelivingexperiment' ),
+		'id'            => 'newsletter',
+		'description'   => esc_html__( 'Add or edit newsletter and mailchimp form copy here.', 'thelivingexperiment' ),
+		'before_widget' => '<div id="openNewsletter" class="modalDialog">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="modal-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Opt-In Widget', 'thelivingexperiment' ),
+		'id'            => 'opt-in',
+		'description'   => esc_html__( 'Add or edit opt-in copy here.', 'thelivingexperiment' ),
+		'before_widget' => '<div class="opt-in">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'More From Widget', 'thelivingexperiment' ),
+		'id'            => 'more-from',
+		'description'   => esc_html__( 'Add widgets here', 'thelivingexperiment' ),
+		'before_widget' => '<figure class="more-from">',
+		'after_widget'  => '</figure>',
+		'before_title'  => '<h2 class="more-from-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
@@ -140,6 +167,8 @@ function thelivingexperiment_scripts() {
 	wp_enqueue_style( 'thelivingexperiment-google-fonts', 'https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|Pathway+Gothic+One|Rokkitt');
 	
 	wp_enqueue_style('thelivingexperiment-fontawesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', true );
+	
+	wp_enqueue_style('thelivingexperiment-fade-in','https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', true );
 
 	wp_enqueue_script( 'thelivingexperiment-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
@@ -202,14 +231,42 @@ function thelivingexperiment_remove_all_jp_css() {
 add_action('wp_print_styles', 'thelivingexperiment_remove_all_jp_css' );
 
 function jptweak_remove_share() {
-    if ( is_page( 189 ) ) {
     remove_filter( 'the_content', 'sharing_display',19 );
     remove_filter( 'the_excerpt', 'sharing_display',19 );
-      }
+    if ( class_exists( 'Jetpack_Likes' ) ) {
+        remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+    }
 }
  
 add_action( 'loop_start', 'jptweak_remove_share' );
 
+
+/*===================================================================================
+ * Add Author Links
+ * =================================================================================*/
+function add_to_author_profile( $contactmethods ) {
+	
+	$contactmethods['twitter_profile'] = 'Twitter Profile URL';
+	$contactmethods['facebook_profile'] = 'Facebook Profile URL';
+	$contactmethods['instagram_profile'] = 'Instagram Profile URL';
+	$contactmethods['email_profile'] = 'Public Contact Email';
+
+	
+	return $contactmethods;
+}
+add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
+
+//this goes in functions.php near the top
+function my_scripts_method() {
+// register your script location, dependencies and version
+   wp_register_script('custom_script',
+   get_template_directory_uri() . '/js/fade.js',
+   array('jquery'),
+   '1.0' );
+ // enqueue the script
+  wp_enqueue_script('custom_script');
+  }
+add_action('wp_enqueue_scripts', 'my_scripts_method');
 
 /**
  * Implement the Custom Header feature.

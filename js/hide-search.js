@@ -1,6 +1,6 @@
 /* 
  * Toggles search on and off
- */
+
 jQuery(document).ready(function($){
     $(".search-toggle").click(function(){
         $(".search-box-wrapper").slideToggle('slow', function(){
@@ -9,3 +9,4 @@ jQuery(document).ready(function($){
         return false;
     });
 });
+ */

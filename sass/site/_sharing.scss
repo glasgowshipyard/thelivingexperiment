@@ -1,3 +1,15 @@
+.share-episode {
+	float: right;
+	border:  2px solid $color__tle-border;
+	padding: 1em;
+	width: 250px;
+}
+
+.share-episode img {
+	max-width: 220px;
+}
+
+
 /**
  * Sharedaddy Base Styles
  *
@@ -13,14 +25,14 @@ div.sharedaddy,
 #content div.sharedaddy,
 #main div.sharedaddy {
   clear: both;
+  text-align: center;
 }
 
 div.sharedaddy h3.sd-title {
   margin: 0 0 1em 0;
   display: inline-block;
   line-height: 1.2;
-  font-size: 9pt;
-  font-weight: bold;
+  text-transform: uppercase;
 }
 
 div.sharedaddy h3.sd-title:before {
@@ -28,7 +40,6 @@ div.sharedaddy h3.sd-title:before {
   display: block;
   width: 100%;
   min-width: 30px;
-  border-top: 1px solid #ddd;
   margin-bottom: 1em;
 }
 
@@ -43,7 +54,7 @@ body.highlander-dark h3.sd-title:before {
 /* Sharing services list */
 .sd-content ul {
   padding: 0 !important;
-  margin: 0 0 .7em 0 !important;
+  margin: 0 -.7em .7em 0 !important;
   list-style: none !important;
 }
 

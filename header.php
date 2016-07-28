@@ -16,19 +16,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 	<div class="navbar">
-	<h1 class="site-wordmark"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="the">The</span><?php bloginfo( 'name' ); ?></a></h1>
-			<nav id="site-navigation" class="main-navigation" role="navigation"><button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span><?php esc_html_e( 'Primary Menu', 'thelivingexperiment' ); ?></button><?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-<span  class="search-toggle"><i class="fa fa-search"></i><a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'thelivingexperiment' ); ?></a></span>
+	<h1 id="site-wordmark"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="the">The</span><span class="livingexperiment"><?php bloginfo( 'name' ); ?></span></a></h1>
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+<span class="search-toggle"><a href="#search"><i class="fa fa-search"></i></a></span>
 			</nav>
-			<?php thelivingexperiment_social_menu(); ?>
-			<div id="header-search-container" class="search-box-wrapper hide">
+			<div id="search" class="search-box-wrapper">
 			<div class="search-box">
-				<?php get_search_form(); ?>
+				<?php get_search_form(); ?><a href="#" class="shut">close</a>
 			</div>
 			</div>
 </div>
@@ -54,4 +54,5 @@
 	</header><!-- #masthead -->
 		<?php if ( dynamic_sidebar('subscribe') ) : else : endif; ?>
 		<?php if ( dynamic_sidebar('contact') ) : else : endif; ?>
+		<?php if ( dynamic_sidebar('newsletter') ) : else : endif; ?>
 	<div id="content" class="site-content">

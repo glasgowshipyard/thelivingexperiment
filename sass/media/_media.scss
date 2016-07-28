@@ -23,3 +23,178 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 @import "galleries";
+
+@media screen and (max-width: 37.5em) {
+	
+#site-wordmark {
+	display: none;
+}
+
+.menu-social ul {
+	left: -1.5em;
+	top: 0;
+	z-index: -1;
+}
+
+.search-toggle {
+	left: 0;
+	top: 0;
+	width: 1em;
+}
+
+.menu-social ul,
+.search-toggle {
+	padding: 1.5em;
+}
+
+.main-navigation,
+.main-navigation li{
+	width: 100%;
+	background: $color__tle-menu;
+	margin-top: .5em;
+}
+
+div.the {
+	width: 2rem;
+	height: 2rem;
+	padding-top: .3rem;
+	font-size: 1rem;
+}
+
+.site-title {
+	font-size: 2em;
+}
+.site-description {
+	font-size: .8em;
+}
+
+.glass-promontory {
+	top: 3em;
+}
+
+.opt-in {
+	font-size: .8em;
+	text-align: center;
+}
+
+h2.more-from-title {
+	font-size: 1em;
+}
+
+.modalDialog > div {
+	width: 90%;
+}
+
+.modalDialog input[type="text"],
+.modalDialog input[type="email"],
+.modalDialog input[type="url"],
+.modalDialog input[type="password"],
+.modalDialog input[type="search"],
+.modalDialog input[type="number"],
+.modalDialog input[type="tel"],
+.modalDialog input[type="range"],
+.modalDialog input[type="date"],
+.modalDialog input[type="month"],
+.modalDialog input[type="week"],
+.modalDialog input[type="time"],
+.modalDialog input[type="datetime"],
+.modalDialog input[type="datetime-local"],
+.modalDialog input[type="color"],
+.modalDialog textarea {
+	margin: .5em auto;
+	max-width: 90%;
+	min-width: 85%;
+}
+
+.modalDialog textarea {
+	max-width: 90%;
+	height: 100px;
+	min-width: 85%;
+}
+
+.modalDialog button,
+.modalDialog input[type="button"],
+.modalDialog input[type="reset"],
+.modalDialog input[type="submit"] {
+	margin: auto;
+}
+.blurb {
+	display: none;
+}
+
+.contact-submit {
+	text-align: center;
+}
+
+.episode-excerpt {
+	overflow: hidden;
+}
+
+.podcast-cover {
+	display: none;
+}
+
+ul.subscribe {
+	text-align: center;
+	width: 100%;
+	margin: 1.5em auto;
+}
+
+ul.subscribe li {
+  list-style: none;
+  width: 180px;
+  border-radius: .5em;
+  background: grey;
+  opacity: .5;
+  text-align: center;
+  margin: .5em;
+  padding: .2em;
+}
+
+.about-copy {
+	padding: 0 1em;
+}
+
+hr {
+	margin-bottom: -2.4em;
+	margin-top: 2.4em;
+}
+
+.search-box .search-field {
+	max-width: 66%;
+}}
+
+@media screen and (max-width: 800px) {
+
+.about-image,
+.about-copy {
+	max-width: 100%;
+}}
+
+@media screen and (min-width: 568px) and (max-width: 800px) {
+
+.blurb {
+	width: 50%;
+	padding: 0 1em;
+	display: initial;
+}
+
+.podcast-cover {
+	display: none;
+}}
+
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+
+.about-copy {
+	padding: 0 2em;
+}
+}
+
+
+@media screen and (min-width: 1500px) {
+
+.about-image {
+max-width: 48.7%;
+float: left;
+margin: .1em;
+}}

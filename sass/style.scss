@@ -94,6 +94,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+@import "site/about";
 @import "site/front";
 @import "site/content";
 @import "site/contact";
@@ -102,7 +103,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "site/sharing";
 @import "site/subscribe";
 @import "site/site";
-
+@import "site/player";
 
 /*--------------------------------------------------------------
 # Infinite scroll

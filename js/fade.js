@@ -6,6 +6,6 @@
  
  jQuery(document).ready(function($){
    $(window).scroll(function(){
-    $(".glass-promontory").css("opacity", 1 - $(window).scrollTop() / 500);
+    $(".glass-promontory").css("opacity", 1 - $(window).scrollTop() / 100);
  });
 });

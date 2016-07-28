@@ -5,15 +5,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	//color: $color__tle-blue;
-	//font-family: 'Pathway Gothic One', sans-serif;
 	font-size: 2.5em;
 	font-weight: normal;
+}
+
+h2.more-from-title {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2em;
+}
+
+header.entry-header {
+	text-transform: lowercase;
 }
 
 .header-image {
 	width: 90%;
 	margin: auto;
+	margin-top: 7em;
 }
 
 .site-title {
@@ -22,18 +31,18 @@ h1 {
 }
 
 .site-title,
-.site-wordmark {
+#site-wordmark {
 	text-transform: uppercase;
 	margin: auto;
 }
 
-.site-wordmark {
+#site-wordmark {
 	position: relative;
 	float: left;
 }
 	
 .site-title a,
-.site-wordmark a {
+#site-wordmark a {
 	
 	&:visited,
 	&:hover,
@@ -48,6 +57,8 @@ h1 {
 .site-description {
 	line-height: 0;
 	text-transform: uppercase;
+	font-family: 'Rokkitt', serif;
+	//letter-spacing: .5em;
 }
 
 .praedyth {
@@ -65,8 +76,17 @@ div.the {
 }
 
 span.the {
-	vertical-align: text-top;
-	font-size: .6em;
+	border-radius: 50%;
+	border: 2px solid;
+	width: 2rem;
+	height: 2rem;
+	padding: .5rem;
+	font-size: 1.5rem;
+}
+
+span.the,
+.livingexperiment {
+	vertical-align: middle;
 }
 
 //font-family: 'Rokkitt', serif;

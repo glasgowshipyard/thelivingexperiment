@@ -11,7 +11,7 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+		<?php if ( dynamic_sidebar('opt-in') ) : else : endif; ?>
 					<?php
 					if ( is_mobile() ) {
 						
@@ -21,25 +21,25 @@ get_header(); ?>
 					$query = new WP_Query( $args );
 					// The Loop
 					if ( $query->have_posts()){
-						echo '<div class="section group">';
+						echo '<div class="episodes">';
 						while ( $query->have_posts() ) {
 							$query->the_post();
-							echo '<div class="col span_1_of_3">';
+							echo '<div class="episode-post">';
 							echo '<div class="episode-title">';
-							echo '<a href="' . get_permalink() . '">';
+						//	echo '<a href="' . get_permalink() . '">';
 							echo '<h1 >' . get_the_title() . '</h1>';
-							echo '</a>';
+						//	echo '</a>';
 							echo '</div>';
 							echo '<div class="episode-number">';
-							do_shortcode('[episode]');
+							$episode_number = ( $query->found_posts - $query->current_post );
+							echo 'EPISODE ' . $episode_number;
 							echo '</div>';
-							setup_postdata($query->post);
 							echo '<div class="episode-excerpt">';
 							the_excerpt();
 							echo '</div>';
 							echo '<div class="episode-footer">';
 							echo '<a href="' . get_permalink() . '">';
-							echo '<button class="listen">Listen</button>';
+							echo '<button class="listen"><a href="' . get_permalink() . '">Listen</a></button>';
 							echo '</a>';
 							echo '</div>';
 							echo '</div>';
@@ -75,61 +75,33 @@ get_header(); ?>
 						echo '<div class="section group">';
 						while ( $query->have_posts() ) {
 							$query->the_post();
+							$episode_number = ( $query->found_posts - $query->current_post );
 							echo '<div class="col span_1_of_3">';
 							echo '<div class="episode-title">';
 							echo '<a href="' . get_permalink() . '">';
 							echo '<h1 >' . get_the_title() . '</h1>';
-							echo '</a>';
 							echo '</div>';
 							echo '<div class= "episode-number">';
-							do_shortcode('[episode]');
+							echo 'EPISODE ' . $episode_number;
 							echo '</div>';
-							setup_postdata($query->post);
 							echo '<div class="episode-excerpt">';
 							the_excerpt();
 							echo '</div>';
 							echo '<div class="episode-footer">';
-							echo '<a href="' . get_permalink() . '">';
 							echo '<button class="listen">Listen</button>';
-							echo '</a>';
 							echo '</div>';
+							echo '</a>';
 							echo '</div>';
 							}
 						}
 						echo '</div>';
-						
+						echo do_shortcode("[ajax_load_more post_type='post' offset='3' category='podcast-episodes' posts_per_page='3' pause='true' scroll='false' transition'fade' button_label='Load More']");						
 					}
 					/* Restore original Post Data */
 					wp_reset_postdata();
 					?>
-									<!--	<?php echo do_shortcode("[ajax_load_more post_type='post' offset='10' category__not_in='9' pause='true' scroll='false' transition_container='false' images_loaded='true' destroy_after='3' button_label='Load More']"); ?>	-->
-				MORE FROM DALLAS AND PILAR
-				
-				<?php 
-					$args = array(
-						'posts_per_page' => 4,
-						'category_name'	=> -'podcast-episodes'
-					);
-					$query = new WP_Query( $args );
-					// The Loop
-					if ( $query->have_posts() ) {
-						echo '<ul class="in-the-media">';
-						while ( $query->have_posts() ) {
-							$query->the_post();
-							echo '<div class="entries-post">';
-							echo '<a href="' . get_permalink() . '">';
-							echo '<figure class="entries-thumb">';
-							the_post_thumbnail('entries-pic');
-							echo '</figure>';
-							echo '</a>';
-							echo '</div>';
-							}
-							
-						}
-						echo '</ul>';
-					/* Restore original Post Data */
-					wp_reset_postdata();
-					?>
+						
+				<?php if ( dynamic_sidebar('more-from') ) : else : endif; ?>
 				
 					</main><!-- #main -->
 	</div><!-- #primary -->
