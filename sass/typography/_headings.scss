@@ -2,6 +2,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	color: $color__tle-blue;
 	font-family: 'Pathway Gothic One', sans-serif;
+	font-weight: normal;
 }
 
 h1 {
@@ -9,10 +10,15 @@ h1 {
 	font-weight: normal;
 }
 
-h2.more-from-title {
+h2.more-from-title,
+h2.about-widget-title {
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 2em;
+}
+
+h3 {
+	margin: 0;
 }
 
 header.entry-header {
@@ -22,12 +28,18 @@ header.entry-header {
 .header-image {
 	width: 90%;
 	margin: auto;
-	margin-top: 7em;
+	margin-top: 10em;
+}
+
+span#social-header {
+	float: left;
+	padding-top: 1.4em;
 }
 
 .site-title {
 	font-size: $tle_title_size;
 	line-height: 1;
+	letter-spacing: .1em;
 }
 
 .site-title,
@@ -39,6 +51,7 @@ header.entry-header {
 #site-wordmark {
 	position: relative;
 	float: left;
+	margin-left: .5em;
 }
 	
 .site-title a,
@@ -69,19 +82,23 @@ div.the {
 	border-radius: 50%;
 	border: 2px solid;
 	margin: auto;
-	width: 4rem;
-	height: 4rem;
-	padding-top: .9rem;
+	width: 5rem;
+	height: 5rem;
+	padding: 1.4rem .9rem;
 	font-size: 2rem;
 }
 
 span.the {
 	border-radius: 50%;
 	border: 2px solid;
-	width: 2rem;
-	height: 2rem;
-	padding: .5rem;
-	font-size: 1.5rem;
+	padding: 12px;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+}
+
+span.livingexperiment {
+	letter-spacing: 5px;
+	margin-left: .5rem;
 }
 
 span.the,

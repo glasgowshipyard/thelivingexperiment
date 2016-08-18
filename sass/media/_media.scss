@@ -48,28 +48,45 @@ object {
 }
 
 .main-navigation,
+button.menu-toggle {
+	padding: 0;
+	margin: 0;
+}
+
+.main-navigation,
 .main-navigation li{
 	width: 100%;
 	background: $color__tle-menu;
-	margin-top: .5em;
+}
+
+.main-navigation li {
+text-align: center;
+padding: .5em 0;
 }
 
 div.the {
 	width: 2rem;
 	height: 2rem;
-	padding-top: .3rem;
-	font-size: 1rem;
+	padding: .5rem .4rem;
+	font-size: .6rem;
+	font-weight: bold;
+	letter-spacing: 1px;
 }
 
 .site-title {
 	font-size: 2em;
 }
 .site-description {
-	font-size: .8em;
+	font-size: .7em;
+}
+
+span#social-header {
+	float: left;
+	padding-top: 0;
 }
 
 .glass-promontory {
-	top: 3em;
+	top: 5em;
 }
 
 .opt-in {
@@ -118,6 +135,7 @@ h2.more-from-title {
 .modalDialog input[type="submit"] {
 	margin: auto;
 }
+
 .blurb {
 	display: none;
 }
@@ -126,8 +144,24 @@ h2.more-from-title {
 	text-align: center;
 }
 
+div.entry-content p {
+	max-width: 100%;
+}
+
+
 .episode-excerpt {
 	overflow: hidden;
+	font-size: .7em;
+}
+
+h1.player-title {
+	font-size: 1.5em;
+	align-items: center;
+	line-height: 2.5em;
+}
+
+.player-title {
+	height: 62px;
 }
 
 .podcast-cover {
@@ -151,7 +185,7 @@ ul.subscribe li {
   padding: .2em;
 }
 
-.about-copy {
+#auth article {
 	padding: 0 1em;
 }
 
@@ -162,13 +196,36 @@ hr {
 
 .search-box .search-field {
 	max-width: 66%;
-}}
+}
+#greyjoy {
+	padding: 2em; 
+}
+
+button.listen {
+	min-width: 120px;
+}
+
+#social-header.menu-social {
+	width: auto;
+}
+
+.share-episode {
+	float: none;
+	margin: auto;
+}
+
+div.unhealthy-world-pdf {
+	display: none;
+}
+
+}
 
 @media screen and (max-width: 800px) {
 
 .about-image,
-.about-copy {
+#auth article {
 	max-width: 100%;
+	width: 100%;
 }}
 
 @media screen and (min-width: 568px) and (max-width: 800px) {
@@ -179,22 +236,53 @@ hr {
 	display: initial;
 }
 
+span.livingexperiment {
+	letter-spacing: 3px;
+}
+
 .podcast-cover {
 	display: none;
-}}
+}
+
+.main-navigation {
+	//padding: 1.5em 1.9em;
+}
+
+.glass-promontory {
+	top: 2em;
+}
+
+button.listen {
+	min-width: 120px;
+}
+
+}
 
 @media screen and (min-width: 801px) and (max-width: 1024px) {
 
-.about-copy {
+#auth article {
 	padding: 0 2em;
 }
+
+div#auth.col{
+	margin: 1% 0 1% 2% !important;
+}
+
 }
 
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1500px) and (max-width: 2399px){
 
-.about-image {
-max-width: 48.7%;
-float: left;
-margin: .1em;
+div#auth.col{
+	margin: 1% 0 1% 2% !important;
+}}
+
+@media screen and (min-width: 2400px) {
+
+.glass-promontory {
+	top: 10em;
+}
+
+#greyjoy {
+	padding: 5em; 
 }}

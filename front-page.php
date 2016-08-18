@@ -12,45 +12,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php if ( dynamic_sidebar('opt-in') ) : else : endif; ?>
+		<div id="greyjoy">
 					<?php
-					if ( is_mobile() ) {
-						
-						$args = array(
-						'category_name'			=> 'podcast-episodes',
-					);	
-					$query = new WP_Query( $args );
-					// The Loop
-					if ( $query->have_posts()){
-						echo '<div class="episodes">';
-						while ( $query->have_posts() ) {
-							$query->the_post();
-							echo '<div class="episode-post">';
-							echo '<div class="episode-title">';
-						//	echo '<a href="' . get_permalink() . '">';
-							echo '<h1 >' . get_the_title() . '</h1>';
-						//	echo '</a>';
-							echo '</div>';
-							echo '<div class="episode-number">';
-							$episode_number = ( $query->found_posts - $query->current_post );
-							echo 'EPISODE ' . $episode_number;
-							echo '</div>';
-							echo '<div class="episode-excerpt">';
-							the_excerpt();
-							echo '</div>';
-							echo '<div class="episode-footer">';
-							echo '<a href="' . get_permalink() . '">';
-							echo '<button class="listen"><a href="' . get_permalink() . '">Listen</a></button>';
-							echo '</a>';
-							echo '</div>';
-							echo '</div>';
-							}
-						}
-						echo '</div>';
-					/* Restore original Post Data */
-					wp_reset_postdata();
-					
-					} else {
-					
 					if ( get_query_var('paged') ) {
 
 					$paged = get_query_var('paged');
@@ -93,14 +56,13 @@ get_header(); ?>
 							echo '</a>';
 							echo '</div>';
 							}
-						}
 						echo '</div>';
-						echo do_shortcode("[ajax_load_more post_type='post' offset='3' category='podcast-episodes' posts_per_page='3' pause='true' scroll='false' transition'fade' button_label='Load More']");						
+						echo do_shortcode("[ajax_load_more post_type='post' offset='3' category='podcast-episodes' posts_per_page='3' pause='true' scroll='false' transition'fade' button_label='Load More' destroy_after='1']");
 					}
 					/* Restore original Post Data */
 					wp_reset_postdata();
 					?>
-						
+		</div><!-- .greyjoy -->	
 				<?php if ( dynamic_sidebar('more-from') ) : else : endif; ?>
 				
 					</main><!-- #main -->

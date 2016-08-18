@@ -20,7 +20,11 @@
 </head>
 <body <?php body_class(); ?>>
 	<div class="navbar">
-	<h1 id="site-wordmark"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="the">The</span><span class="livingexperiment"><?php bloginfo( 'name' ); ?></span></a></h1>
+	<?php	if ( !is_front_page() && !is_mobile() ) : ?><h1 id="site-wordmark" class="slideInLeft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="the">The</span><span class="livingexperiment">
+	<?php bloginfo( 'name' ); ?></span></a></h1>
+	<?php else : ?>
+	<span id="social-header"><?php thelivingexperiment_social_menu(); ?></span>
+	<?php endif; // End header image check. ?>	
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span></span></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
@@ -47,7 +51,7 @@
 					<?php if ( get_header_image() ) : ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img src="<?php header_image(); ?>" alt=""></a>
 					<?php endif; // End header image check. ?>
-		</div>
+		</div></header>
 		<?php endif; // End header image check. ?>
 		<?php endif; // End front page check. ?>
 			</div><!-- .site-branding -->

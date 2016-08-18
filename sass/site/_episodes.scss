@@ -15,32 +15,34 @@
 	justify-content: center;
 	align-items: center;
 	line-height: 1.9;
+	text-transform: uppercase;
+}
+
+.share {
+	@include parallax(.2);
 }
 
 .player-title {
 	text-transform: lowercase;
-	margin: 0;
+	margin: 0 .5em;
 	display: inline-block;
 }
 
 .player-blurb {
 	border-top: 2px solid $color__tle-border;
 	padding: 1em;
+	text-transform: none;
 	}
-
-.author-about {
-	margin: auto;
-	text-align: center;
-	max-width: 1024px;
-}
-
+	
 .episodes {
 	white-space: nowrap;
 	overflow-x: scroll;
-	overflow-y: hidden;
+	overflow-y: scroll;	
 	webkit-overflow-scrolling: touch;
 	scroll-snap-type: mandatory;
-	scroll-snap-points-x: snapInterval (0px, 100px);
+	scroll-snap-points-x: snapInterval (0px, 125px);
+	max-height: 100%;
+	z-index: -1;
 }
 
 .episode-post {
@@ -50,9 +52,9 @@
     page-break-inside: avoid;           /* Theoretically FF 20+ */
     break-inside: avoid-column;         /* IE 11 */
     width: 90%;
-    max-width: 300px;
-    white-space:normal;
-    margin:0 .5em;
+    max-width: 250px;
+	white-space: normal;
+	margin: 0 1em;
 }
 
 .episode-number,
@@ -126,7 +128,7 @@ author-info {
 
 @media only screen and (max-width: 480px) {
 	.col { 
-		margin: 1% 0 1% 0%;
+		margin: 1% 0 1em 0%;
 	}
 }
 

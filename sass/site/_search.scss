@@ -6,6 +6,7 @@
     text-align: center;
     cursor: pointer;
     color: $color__tle-dark-grey;
+    visibility: hidden;
 }
 
 .search-toggle:hover,
@@ -50,8 +51,12 @@ a.shut {
     background-color: #fff;
     border: 0;
     height: 1.25em;
+    
 }
-
+.search-field::-webkit-input-placeholder {
+	color: $color__tle-light-grey !important;
+	padding-left: .5em;
+}
 //.hide {
 //	display: none;
 //} */

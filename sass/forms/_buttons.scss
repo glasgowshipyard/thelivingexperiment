@@ -17,6 +17,7 @@ input[type="submit"] {
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: .2em;
+	text-decoration: none;
 
 	&:hover,
 	&:active,
@@ -28,6 +29,7 @@ input[type="submit"] {
 
 button.subscribe a{
 	color: #fff;
+	text-decoration: none;
 	&:hover,
 	&:active,
 	&:focus {
@@ -51,4 +53,9 @@ button.subscribe a{
 	&:focus {
 		background: $color__tle-dark-grey;	
 		}
+}
+
+div.alm-btn-wrap {
+	text-align: center;
+	margin-top: 1em;
 }

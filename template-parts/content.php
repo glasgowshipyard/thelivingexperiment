@@ -57,8 +57,4 @@ if ( class_exists( 'Jetpack_Likes' ) ) {
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php thelivingexperiment_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

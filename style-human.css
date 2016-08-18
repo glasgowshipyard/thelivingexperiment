@@ -264,7 +264,7 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
+  color: #595959;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -275,6 +275,7 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   color: #429aa9;
   font-family: 'Pathway Gothic One', sans-serif;
+  font-weight: normal;
 }
 
 h1 {
@@ -282,10 +283,15 @@ h1 {
   font-weight: normal;
 }
 
-h2.more-from-title {
+h2.more-from-title,
+h2.about-widget-title {
   text-align: center;
   text-transform: uppercase;
   font-size: 2em;
+}
+
+h3 {
+  margin: 0;
 }
 
 header.entry-header {
@@ -295,12 +301,18 @@ header.entry-header {
 .header-image {
   width: 90%;
   margin: auto;
-  margin-top: 7em;
+  margin-top: 10em;
+}
+
+span#social-header {
+  float: left;
+  padding-top: 1.4em;
 }
 
 .site-title {
   font-size: 4em;
   line-height: 1;
+  letter-spacing: .1em;
 }
 
 .site-title,
@@ -312,6 +324,7 @@ header.entry-header {
 #site-wordmark {
   position: relative;
   float: left;
+  margin-left: .5em;
 }
 
 .site-title a:visited, .site-title a:hover, .site-title a:focus, .site-title a:active,
@@ -337,19 +350,23 @@ div.the {
   border-radius: 50%;
   border: 2px solid;
   margin: auto;
-  width: 4rem;
-  height: 4rem;
-  padding-top: .9rem;
+  width: 5rem;
+  height: 5rem;
+  padding: 1.4rem .9rem;
   font-size: 2rem;
 }
 
 span.the {
   border-radius: 50%;
   border: 2px solid;
-  width: 2rem;
-  height: 2rem;
-  padding: .5rem;
-  font-size: 1.5rem;
+  padding: 12px;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+span.livingexperiment {
+  letter-spacing: 5px;
+  margin-left: .5rem;
 }
 
 span.the,
@@ -465,13 +482,13 @@ dd {
 }
 
 div.entry-content ul {
-  list-style: none;
   display: inline-block;
 }
 
 div.entry-content li a {
   display: inline-block;
   padding: .5em 0;
+  list-style: none;
 }
 
 div.entry-content ul li a {
@@ -488,6 +505,10 @@ img {
   /* Make sure images are scaled correctly. */
   max-width: 100%;
   /* Adhere to container width. */
+}
+
+div.jetpack-image-container {
+  padding: 2em;
 }
 
 table {
@@ -513,6 +534,7 @@ input[type="submit"] {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: .2em;
+  text-decoration: none;
 }
 button:hover, button:active, button:focus,
 input[type="button"]:hover,
@@ -530,6 +552,7 @@ input[type="submit"]:focus {
 
 button.subscribe a {
   color: #fff;
+  text-decoration: none;
 }
 button.subscribe a:hover, button.subscribe a:active, button.subscribe a:focus {
   background: #bcbec0;
@@ -547,6 +570,11 @@ button.subscribe a:hover, button.subscribe a:active, button.subscribe a:focus {
 }
 .listen:hover, .listen:active, .listen:focus {
   background: #77797b;
+}
+
+div.alm-btn-wrap {
+  text-align: center;
+  margin-top: 1em;
 }
 
 input[type="text"],
@@ -660,6 +688,10 @@ a:hover, a:focus, a:active {
   outline: 0;
 }
 
+.entry-content a {
+  text-decoration: underline;
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -671,12 +703,14 @@ a:hover, a:focus, a:active {
   position: fixed;
   font-family: 'PT Sans Narrow', sans-serif;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 .main-navigation {
   display: block;
   float: right;
   padding: 1.5em;
+  font-weight: normal;
 }
 .main-navigation ul {
   display: none;
@@ -829,9 +863,25 @@ button.menu-toggle a {
   width: 8em;
 }
 
-.menu-social ul li {
+ul.social-blurb {
+  display: block;
+  list-style: none;
+  z-index: 3;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+}
+
+.menu-social ul li,
+.social-blurb li {
   position: relative;
   display: inline-block;
+}
+
+.social-blurb li a {
+  display: inline-block;
+  padding: 0 5px;
+  vertical-align: top;
 }
 
 .menu-social li a:before {
@@ -841,6 +891,10 @@ button.menu-toggle a {
   font-family: 'fontawesome';
   -webkit-font-smoothing: antialiased;
   content: '\f0c0';
+}
+
+.menu-social li a[href*="livingexperiment.com"]::before {
+  content: '\f015';
 }
 
 .menu-social li a[href*="facebook.com"]::before {
@@ -1050,21 +1104,61 @@ button.menu-toggle a {
 # Content
 --------------------------------------------------------------*/
 .about-image {
-  max-width: 46.9%;
+  width: 50%;
   float: left;
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
-.about-copy {
-  float: right;
-  max-width: 46.9%;
+.about-image img {
+  max-width: 20%;
+}
+
+.author-about {
+  margin: auto;
+  text-align: center;
+}
+
+div#about.section.group {
+  max-width: 1024px;
+  margin: -1em auto;
+}
+
+#auth article header {
+  text-align: center;
+}
+
+.about-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  background: #f6f6f6;
+  margin: .5em -5.5% 0 -5.5%;
+  padding-top: .5em;
+  overflow: hidden;
+}
+
+#auth article {
+  max-width: 50%;
   padding: 0 4em;
+  float: right;
+  margin: -2em 0 0 0;
 }
 
-.author-about .section group .col {
-  margin: 1% 0 1% 5%;
+#aboot div.entry-content p {
+  max-width: 100%;
 }
 
-author-excerpt a {
+.author-excerpt {
+  padding: 1em 2.25em !important;
+}
+
+.author-excerpt a {
   text-decoration: underline;
 }
 
@@ -1107,7 +1201,7 @@ author-excerpt a {
 .col {
   display: block;
   float: left;
-  margin: 1% 0 1% 1.6%;
+  margin: 1% 0 1em 1.6%;
   border: 2px solid #939598;
   padding: 0;
   text-align: center;
@@ -1213,7 +1307,7 @@ author-excerpt a {
 
 div.unhealthy-world-pdf {
   max-width: 40%;
-  padding: 1em;
+  padding: 3em 1em;
 }
 
 div.indicates-required {
@@ -1225,7 +1319,7 @@ div.more-from {
 }
 
 div#mc_embed_signup {
-  padding: 0 1em;
+  padding: 1.5em;
 }
 
 .more-from a {
@@ -1267,18 +1361,23 @@ div#mc_embed_signup {
   transition: transform .2s ease-in-out;
 }
 
-div.alm-btn-wrap {
-  text-align: center;
-}
-
 .site {
-  margin: 72px auto 0 0;
+  margin: 100px auto 0 0;
 }
 
 .site-main {
   width: 90%;
   margin: auto;
   max-width: 2400px;
+  transform-style: flat;
+}
+
+.site-content {
+  margin-top: 2em;
+}
+
+div.entry-content p {
+  max-width: 85%;
 }
 
 .site-footer {
@@ -1307,7 +1406,12 @@ hr {
 }
 .slideInLeft {
   animation-name: slideInLeft;
-  font-size: 40em;
+}
+
+#greyjoy {
+  background: #f6f6f6;
+  margin: 0 -5.5%;
+  padding: 2em 4em;
 }
 
 /*
@@ -1349,6 +1453,8 @@ body.modalDialog {
   -ms-flex-pack: justify;
       justify-content: space-between;
   background: #fff;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  transform-style: flat;
 }
 
 .modalDialog > .modal-title {
@@ -1375,6 +1481,10 @@ body.modalDialog {
 
 #opencontact.blurb {
   margin-left: 4em;
+}
+
+div#mce-success-response.response {
+  padding: 1em !important;
 }
 
 .modalDialog input[type="text"],
@@ -1432,32 +1542,35 @@ body.modalDialog {
   -ms-flex-align: center;
       align-items: center;
   line-height: 1.9;
+  text-transform: uppercase;
+}
+
+.share {
+  transform: translateZ(0.2px) scale(0.8);
+  z-index: 200;
 }
 
 .player-title {
   text-transform: lowercase;
-  margin: 0;
+  margin: 0 .5em;
   display: inline-block;
 }
 
 .player-blurb {
   border-top: 2px solid #939598;
   padding: 1em;
-}
-
-.author-about {
-  margin: auto;
-  text-align: center;
-  max-width: 1024px;
+  text-transform: none;
 }
 
 .episodes {
   white-space: nowrap;
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: scroll;
   webkit-overflow-scrolling: touch;
   scroll-snap-type: mandatory;
-  scroll-snap-points-x: snapInterval 0px, 100px;
+  scroll-snap-points-x: snapInterval 0px, 125px;
+  max-height: 100%;
+  z-index: -1;
 }
 
 .episode-post {
@@ -1470,9 +1583,9 @@ body.modalDialog {
   break-inside: avoid-column;
   /* IE 11 */
   width: 90%;
-  max-width: 300px;
+  max-width: 250px;
   white-space: normal;
-  margin: 0 .5em;
+  margin: 0 1em;
 }
 
 .episode-number,
@@ -1548,7 +1661,7 @@ author-info {
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 @media only screen and (max-width: 480px) {
   .col {
-    margin: 1% 0 1% 0%;
+    margin: 1% 0 1em 0%;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1563,6 +1676,7 @@ author-info {
   text-align: center;
   cursor: pointer;
   color: #77797b;
+  visibility: hidden;
 }
 
 .search-toggle:hover,
@@ -1613,6 +1727,11 @@ a.shut {
   height: 1.25em;
 }
 
+.search-field::-webkit-input-placeholder {
+  color: #bcbec0 !important;
+  padding-left: .5em;
+}
+
 .error404 .search-submit,
 .search .search-submit,
 .search-box .search-submit {
@@ -1632,6 +1751,7 @@ a.shut {
   border: 2px solid #939598;
   padding: 1em;
   width: 250px;
+  transform-style: flat;
 }
 
 .share-episode img {
@@ -1657,6 +1777,8 @@ div.sharedaddy,
 }
 
 div.sharedaddy h3.sd-title {
+  display: inline-block;
+  line-height: 1.2;
   margin: 0 0 1em 0;
   display: inline-block;
   line-height: 1.2;
@@ -1712,7 +1834,6 @@ body.highlander-dark h3.sd-title:before {
   /* official Digg button no longer works, needs cleaning */
   text-decoration: none !important;
   display: inline-block;
-  margin: 0 5px 5px 0;
   font-size: 12px;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
@@ -1749,12 +1870,15 @@ body.highlander-dark h3.sd-title:before {
   vertical-align: top;
 }
 
+.sd-social-official .sd-content ul li a.sd-button > span {
+  line-height: 17px;
+}
+
 .sd-social-official .sd-content > ul > li > a.sd-button:before,
 .sd-social-official .sd-content > ul > li .digg_button > a:before,
 .sd-social-official .sd-content .sharing-hidden .inner > ul > li > a.sd-button:before,
 .sd-social-official .sd-content .sharing-hidden .inner > ul > li .digg_button > a:before {
   margin-bottom: -1px;
-  top: 0;
 }
 
 .sd-social-icon .sd-content ul li a.sd-button:hover,
@@ -1785,15 +1909,37 @@ body.highlander-dark h3.sd-title:before {
   display: inline-block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font: normal 16px/1 'Genericons';
+  font: normal 18px/1 'social-logos';
   vertical-align: top;
-  position: relative;
-  top: 3px;
   text-align: center;
 }
 
+/* text + icon styles should have relative and top position */
+.sd-social-icon-text ul li a.sd-button:before {
+  position: relative;
+  top: 2px;
+}
+
+/* Make it look great in Chrome and Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .sd-content ul li a.sd-button:before {
+    position: relative;
+    top: 2px;
+  }
+}
+.sd-social-official ul li a.sd-button:before {
+  position: relative;
+  top: -2px;
+}
+
+/* Make it look great in Chrome and Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .sd-social-official ul li a.sd-button:before {
+    top: 0px;
+  }
+}
 .sd-content ul li {
-  margin: 0 !important;
+  margin: 0 5px 5px 0;
   padding: 0;
 }
 
@@ -1827,9 +1973,20 @@ body .sd-content ul li.share-custom.no-icon a span {
 
 .sd-social-icon .sd-content ul li a.share-more {
   position: relative;
-  top: 2px;
+  top: -4px;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .sd-social-icon .sd-content ul li a.share-more {
+    top: 2px;
+  }
+}
+/* Firefox specific hack to make the share more button look better on Firefox. */
+@-moz-document url-prefix() {
+  .sd-social-icon .sd-content ul li a.share-more {
+    top: 2px;
+  }
+}
 .sd-social-icon .sd-content ul li a.share-more span {
   margin-left: 3px;
 }
@@ -1877,14 +2034,7 @@ body .sd-content ul li.share-custom.no-icon a span {
 .sd-social-text .sd-content ul li.share-tumblr a:before,
 .sd-content ul li.share-tumblr div.option.option-smart-off a:before,
 .sd-social-icon-text .sd-content li.share-tumblr a:before {
-  content: '\f214';
-}
-
-.sd-social-icon .sd-content ul li.share-stumbleupon a:before,
-.sd-social-text .sd-content ul li.share-stumbleupon a:before,
-.sd-content ul li.share-stumbleupon div.option.option-smart-off a:before,
-.sd-social-icon-text .sd-content li.share-stumbleupon a:before {
-  content: '\f223';
+  content: '\f607';
 }
 
 .sd-social-icon .sd-content ul li.share-pocket a:before,
@@ -1898,7 +2048,7 @@ body .sd-content ul li.share-custom.no-icon a span {
 .sd-social-text .sd-content ul li.share-pinterest a:before,
 .sd-content ul li.share-pinterest div.option.option-smart-off a:before,
 .sd-social-icon-text .sd-content li.share-pinterest a:before {
-  content: '\f209';
+  content: '\f210';
 }
 
 .sd-social-icon .sd-content ul li.share-google-plus-1 a:before,
@@ -1912,7 +2062,7 @@ body .sd-content ul li.share-custom.no-icon a span {
 .sd-social-text .sd-content ul li.share-facebook a:before,
 .sd-content ul li.share-facebook div.option.option-smart-off a:before,
 .sd-social-icon-text .sd-content li.share-facebook a:before {
-  content: '\f204';
+  content: '\f203';
 }
 
 .sd-social-icon .sd-content ul li.share-press-this a:before,
@@ -1927,6 +2077,25 @@ body .sd-content ul li.share-custom.no-icon a span {
   color: #2ba1cb;
 }
 
+.sd-social-icon .sd-content ul li.share-telegram a:before,
+.sd-social-text .sd-content ul li.share-telegram a:before,
+.sd-content ul li.share-telegram div.option.option-smart-off a:before,
+.sd-social-icon-text .sd-content li.share-telegram a:before,
+.sd-social-official .sd-content li.share-telegram a:before {
+  content: '\f606';
+}
+
+.sd-social-official .sd-content li.share-telegram a:before {
+  color: #0088cc;
+}
+
+.sd-social-icon .sd-content ul li.share-skype a:before,
+.sd-social-text .sd-content ul li.share-skype a:before,
+.sd-content ul li.share-skype div.option.option-smart-off a:before,
+.sd-social-icon-text .sd-content li.share-skype a:before {
+  content: '\f220';
+}
+
 .sd-social-icon .sd-content ul a.share-more:before,
 .sd-social-text .sd-content ul a.share-more:before,
 .sd-content ul li.advanced a.share-more:before,
@@ -1937,6 +2106,23 @@ body .sd-content ul li.share-custom.no-icon a span {
 
 .sd-social-official .sd-content a.share-more:before {
   color: #2ba1cb;
+}
+
+.sd-social-icon .sd-content ul li.share-jetpack-whatsapp a:before,
+.sd-social-text .sd-content ul li.share-jetpack-whatsapp a:before,
+.sd-content ul li.share-jetpack-whatsapp div.option.option-smart-off a:before,
+.sd-social-icon-text .sd-content li.share-jetpack-whatsapp a:before,
+.sd-social-official .sd-content li.share-jetpack-whatsapp a:before {
+  content: '\f608';
+}
+
+.sd-social-official .sd-content li.share-jetpack-whatsapp a:before {
+  color: #43d854;
+}
+
+.sd-social-icon .sd-content ul li[class*='share-'].share-jetpack-whatsapp a.sd-button {
+  background: #43d854;
+  color: #fff !important;
 }
 
 /* Share count */
@@ -1987,17 +2173,21 @@ body .sd-content ul li.share-custom.no-icon a span {
   width: 98px;
 }
 
-.sd-social-official .sd-content .twitter_button iframe {
-  width: 96px;
+/* Individual official buttons */
+.googleplus1_button .g-plus {
+  vertical-align: top !important;
 }
 
-/* Individual official buttons */
-.stumbleupon_button iframe, .reddit_button iframe {
+.reddit_button iframe {
   margin-top: 1px;
 }
 
 .pocket_button iframe, .googleplus1_button iframe, .pinterest_button, .twitter_button, .linkedin_button > span {
   margin: 0 !important;
+}
+
+.sd-social-official .sd-content .share-skype {
+  width: 55px;
 }
 
 body .sd-social-official li.share-print,
@@ -2058,8 +2248,8 @@ body .sd-social-icon .sd-content li.share-custom a span {
 
 .sd-social-official .sd-content .sharing-hidden ul > li.share-end {
   clear: both;
-  margin: 0;
-  height: 0;
+  margin: 0 !important;
+  height: 0 !important;
 }
 
 .sharing-hidden .inner:before, .sharing-hidden .inner:after {
@@ -2098,7 +2288,7 @@ body .sd-social-icon .sd-content li.share-custom a span {
   -webkit-border-radius: 50%;
   border: 0;
   box-shadow: none;
-  padding: 8px;
+  padding: 7px;
   position: relative;
   top: -2px;
   line-height: 1;
@@ -2119,7 +2309,9 @@ body .sd-social-icon .sd-content li.share-custom a span {
 }
 
 .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button:before {
-  top: 0;
+  top: 1px;
+  top: 0px\9;
+  /* IE8 and below */
 }
 
 .sd-social-icon .sd-content ul li[class*='share-'] a.sd-button.share-custom {
@@ -2161,11 +2353,6 @@ body .sd-social-icon .sd-content li.share-custom a span {
   color: #fff !important;
 }
 
-.sd-social-icon .sd-content ul li[class*='share-'].share-stumbleupon a.sd-button {
-  background: #666666;
-  color: #fff !important;
-}
-
 .sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button {
   background: #666666;
   color: #fff !important;
@@ -2177,11 +2364,16 @@ body .sd-social-icon .sd-content li.share-custom a span {
 }
 
 .sd-social-icon .sd-content ul li[class*='share-'].share-digg a.sd-button {
-  color: #666666 !important;
+  color: #fff !important;
 }
 
 .sd-social-icon .sd-content ul li[class*='share-'].share-press-this a.sd-button {
-  background: #1e8cbe;
+  background: #666666;
+  color: #fff !important;
+}
+
+.sd-social-icon .sd-content ul li[class*='share-'].share-telegram a.sd-button {
+  background: #666666;
   color: #fff !important;
 }
 
@@ -2202,6 +2394,11 @@ body .sd-social-icon .sd-content li.share-custom a span {
 
 .sd-social-icon .sd-content ul li[class*='share-'].share-reddit a.sd-button {
   background: #666666;
+  color: #fff !important;
+}
+
+.sd-social-icon .sd-content ul li[class*='share-'].share-skype a.sd-button {
+  background: #00AFF0;
   color: #fff !important;
 }
 
@@ -2408,6 +2605,16 @@ ul.subscribe a img:hover {
   margin-top: -2em !important;
 }
 
+div.spp-loaded-container,
+div.spp-loaded {
+  background: #bcbec0 !important;
+}
+
+body.spp .smart-track-player .spp-track .spp-progress .spp-current-time {
+  height: 1em !important;
+  background: #429aa9 !important;
+}
+
 div.spp-loaded-container {
   border: 2px solid #939598;
 }
@@ -2531,17 +2738,29 @@ object {
   }
 
   .main-navigation,
+  button.menu-toggle {
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-navigation,
   .main-navigation li {
     width: 100%;
     background: #f6f6f6;
-    margin-top: .5em;
+  }
+
+  .main-navigation li {
+    text-align: center;
+    padding: .5em 0;
   }
 
   div.the {
     width: 2rem;
     height: 2rem;
-    padding-top: .3rem;
-    font-size: 1rem;
+    padding: .5rem .4rem;
+    font-size: .6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
 
   .site-title {
@@ -2549,11 +2768,16 @@ object {
   }
 
   .site-description {
-    font-size: .8em;
+    font-size: .7em;
+  }
+
+  span#social-header {
+    float: left;
+    padding-top: 0;
   }
 
   .glass-promontory {
-    top: 3em;
+    top: 5em;
   }
 
   .opt-in {
@@ -2611,8 +2835,24 @@ object {
     text-align: center;
   }
 
+  div.entry-content p {
+    max-width: 100%;
+  }
+
   .episode-excerpt {
     overflow: hidden;
+    font-size: .7em;
+  }
+
+  h1.player-title {
+    font-size: 1.5em;
+    -ms-flex-align: center;
+        align-items: center;
+    line-height: 2.5em;
+  }
+
+  .player-title {
+    height: 62px;
   }
 
   .podcast-cover {
@@ -2636,7 +2876,7 @@ object {
     padding: .2em;
   }
 
-  .about-copy {
+  #auth article {
     padding: 0 1em;
   }
 
@@ -2648,11 +2888,33 @@ object {
   .search-box .search-field {
     max-width: 66%;
   }
+
+  #greyjoy {
+    padding: 2em;
+  }
+
+  button.listen {
+    min-width: 120px;
+  }
+
+  #social-header.menu-social {
+    width: auto;
+  }
+
+  .share-episode {
+    float: none;
+    margin: auto;
+  }
+
+  div.unhealthy-world-pdf {
+    display: none;
+  }
 }
 @media screen and (max-width: 800px) {
   .about-image,
-  .about-copy {
+  #auth article {
     max-width: 100%;
+    width: 100%;
   }
 }
 @media screen and (min-width: 568px) and (max-width: 800px) {
@@ -2662,19 +2924,42 @@ object {
     display: initial;
   }
 
+  span.livingexperiment {
+    letter-spacing: 3px;
+  }
+
   .podcast-cover {
     display: none;
   }
-}
-@media screen and (min-width: 801px) and (max-width: 1024px) {
-  .about-copy {
-    padding: 0 2em;
+
+  .glass-promontory {
+    top: 2em;
+  }
+
+  button.listen {
+    min-width: 120px;
   }
 }
-@media screen and (min-width: 1500px) {
-  .about-image {
-    max-width: 48.7%;
-    float: left;
-    margin: .1em;
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+  #auth article {
+    padding: 0 2em;
+  }
+
+  div#auth.col {
+    margin: 1% 0 1% 2% !important;
+  }
+}
+@media screen and (min-width: 1500px) and (max-width: 2399px) {
+  div#auth.col {
+    margin: 1% 0 1% 2% !important;
+  }
+}
+@media screen and (min-width: 2400px) {
+  .glass-promontory {
+    top: 10em;
+  }
+
+  #greyjoy {
+    padding: 5em;
   }
 }

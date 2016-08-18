@@ -27,7 +27,7 @@
 .col {
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
+	margin: 1% 0 1em 1.6%;
 	border: 2px solid $color__tle-border;
 	padding: 0;
 	text-align: center;
@@ -100,7 +100,7 @@
 
 div.unhealthy-world-pdf {
 	max-width: 40%;
-	padding: 1em;
+	padding: 3em 1em;
 }
 
 div.indicates-required {
@@ -112,8 +112,8 @@ div.more-from {
   font-size: 0;
 }
 
-div#mc_embed_signup{
-	padding: 0 1em;
+div#mc_embed_signup {
+    padding: 1.5em
 }
 
 .more-from a {
@@ -154,8 +154,4 @@ div#mc_embed_signup{
   display: block;
   background: #ccc;
   transition: transform .2s ease-in-out;
-}
-
-div.alm-btn-wrap {
-	text-align: center;
 }

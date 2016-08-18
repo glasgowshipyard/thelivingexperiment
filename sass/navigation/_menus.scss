@@ -7,12 +7,14 @@
 	position: fixed;
 	font-family: 'PT Sans Narrow', sans-serif;
 	text-transform: uppercase;
+	font-weight: normal;
 }
 
 .main-navigation {
 	display: block;
 	float: right;
-	padding: 1.5em;
+	padding: 1.5em;// 3em; this shit is for when search is reintroduced
+	font-weight: normal;
 	ul {
 		display: none;
 		list-style: none;
@@ -180,9 +182,6 @@ button.menu-toggle {
 /* Social Menu */
 
 .menu-social ul {
-  //  position: absolute;
-    //top: $tle_menu_height;
-	//right: 1em;
     display: block;
 	list-style: none;    
     z-index: 3;
@@ -193,9 +192,25 @@ button.menu-toggle {
     width: 8em;
 }
 
-.menu-social ul li {
+ul.social-blurb {
+	display: block;
+	list-style: none;    
+    z-index: 3;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+	
+}
+
+.menu-social ul li,
+.social-blurb li{
     position: relative;
     display:  inline-block;    
+}
+.social-blurb li a{
+	   display: inline-block;
+    padding: 0 5px;
+    vertical-align: top;
 }
 
 .menu-social li a:before {
@@ -206,6 +221,8 @@ button.menu-toggle {
     -webkit-font-smoothing: antialiased;
     content: '\f0c0';
 }
+
+.menu-social li a[href*="livingexperiment.com"]::before { content: '\f015'; }
 
 .menu-social li a[href*="facebook.com"]::before { content: '\f09a'; }
 

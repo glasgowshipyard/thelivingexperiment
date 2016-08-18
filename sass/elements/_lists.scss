@@ -25,13 +25,14 @@ dd {
 }
 
 div.entry-content ul {
-	list-style: none;
+	
 	display: inline-block;
 }
 
 div.entry-content li a{
 	display: inline-block;
 	padding: .5em 0;
+	list-style: none;
 }
 
 div.entry-content ul li a{

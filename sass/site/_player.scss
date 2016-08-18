@@ -2,6 +2,18 @@
 	margin-top: -2em !important;
 }
 
+div.spp-loaded-container,
+div.spp-loaded {
+	background: #bcbec0 !important;
+}
+
+body.spp .smart-track-player .spp-track .spp-progress .spp-current-time {
+	height: 1em !important;
+	background: #429aa9 !important;
+}
+
 div.spp-loaded-container {
 	border: 2px solid $color__tle-border;
 }
+
+

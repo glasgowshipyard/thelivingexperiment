@@ -100,7 +100,7 @@ add_action( 'after_setup_theme', 'thelivingexperiment_content_width', 0 );
  */
 function thelivingexperiment_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Subscribe Widget', 'thelivingexperiment' ),
+		'name'          => esc_html__( 'Subscribe Popup', 'thelivingexperiment' ),
 		'id'            => 'subscribe',
 		'description'   => esc_html__( 'Add or edit subscribe copy here.', 'thelivingexperiment' ),
 		'before_widget' => '<div id="openSubscribe" class="modalDialog">',
@@ -109,7 +109,7 @@ function thelivingexperiment_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Contact Widget', 'thelivingexperiment' ),
+		'name'          => esc_html__( 'Contact Popup', 'thelivingexperiment' ),
 		'id'            => 'contact',
 		'description'   => esc_html__( 'Add or edit contact form copy here.', 'thelivingexperiment' ),
 		'before_widget' => '<div id="openContact" class="modalDialog">',
@@ -127,7 +127,7 @@ function thelivingexperiment_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Opt-In Widget', 'thelivingexperiment' ),
+		'name'          => esc_html__( 'Value Prop Text', 'thelivingexperiment' ),
 		'id'            => 'opt-in',
 		'description'   => esc_html__( 'Add or edit opt-in copy here.', 'thelivingexperiment' ),
 		'before_widget' => '<div class="opt-in">',
@@ -136,7 +136,7 @@ function thelivingexperiment_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'More From Widget', 'thelivingexperiment' ),
+		'name'          => esc_html__( 'More From Dallas & Pilar', 'thelivingexperiment' ),
 		'id'            => 'more-from',
 		'description'   => esc_html__( 'Add widgets here', 'thelivingexperiment' ),
 		'before_widget' => '<figure class="more-from">',
@@ -144,6 +144,16 @@ function thelivingexperiment_widgets_init() {
 		'before_title'  => '<h2 class="more-from-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'About Widget', 'thelivingexperiment' ),
+		'id'            => 'about-widget',
+		'description'   => esc_html__( 'Add widgets here.', 'thelivingexperiment' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="about-widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widgets', 'thelivingexperiment' ),
 		'id'            => 'footer-widget',
@@ -163,6 +173,8 @@ function thelivingexperiment_scripts() {
 	wp_enqueue_style( 'thelivingexperiment-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'thelivingexperiment-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	
+	//wp_enqueue_script( 'thelivingexperiment-overthrow', get_template_directory_uri() . '/js/overthrow.js', array(), '20160730', true );
 	
 	wp_enqueue_style( 'thelivingexperiment-google-fonts', 'https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|Pathway+Gothic+One|Rokkitt');
 	
@@ -225,7 +237,7 @@ add_filter( 'jetpack_implode_frontend_css', '__return_false' );
 
 // Then, remove each CSS file, one at a time
 function thelivingexperiment_remove_all_jp_css() {
-	wp_deregister_style( 'sharedaddy' ); // Sharedaddy
+	//wp_deregister_style( 'sharedaddy' ); // Sharedaddy
 	wp_deregister_style( 'grunion.css' ); // Grunion contact form
 }
 add_action('wp_print_styles', 'thelivingexperiment_remove_all_jp_css' );
@@ -256,17 +268,7 @@ function add_to_author_profile( $contactmethods ) {
 }
 add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
-//this goes in functions.php near the top
-function my_scripts_method() {
-// register your script location, dependencies and version
-   wp_register_script('custom_script',
-   get_template_directory_uri() . '/js/fade.js',
-   array('jquery'),
-   '1.0' );
- // enqueue the script
-  wp_enqueue_script('custom_script');
-  }
-add_action('wp_enqueue_scripts', 'my_scripts_method');
+remove_filter('pre_user_description', 'wp_filter_kses');
 
 /**
  * Implement the Custom Header feature.
